@@ -9,6 +9,7 @@ import About from './Pages/Home/About/About';
 import Contact from './Pages/Home/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound';
 import Banner from './Pages/Home/Banner/Banner';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );

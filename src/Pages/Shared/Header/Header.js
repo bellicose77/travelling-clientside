@@ -29,10 +29,11 @@ const Header = () => {
                                 : <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
                                     Link>
                         } */}
+                        <Navbar.Text>
+                            Signed in as: <a href="#login"></a>
+                        </Navbar.Text>
                     </Navbar.Collapse>
-                    <Navbar.Text>
-                        Signed in as: <a href="#login"></a>
-                    </Navbar.Text>
+
 
                 </Container>
             </Navbar>

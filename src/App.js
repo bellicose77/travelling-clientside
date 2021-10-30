@@ -8,6 +8,7 @@ import Destination from './Pages/Home/Destination/Destination';
 import About from './Pages/Home/About/About';
 import Contact from './Pages/Home/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound';
+import Banner from './Pages/Home/Banner/Banner';
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
         <Header></Header>
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            {/* <Home></Home> */}
+            <Banner></Banner>
           </Route>
           <Route path="/home">
-            <Home></Home>
+            {/* <Home></Home> */}
+            <Banner></Banner>
           </Route>
           <Route path="/services">
             <Services></Services>

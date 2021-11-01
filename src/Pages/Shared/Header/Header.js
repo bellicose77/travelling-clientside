@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import useFirebase from '../../../hooks/useFirebase';
 import './Header.css';
 
 const Header = () => {
-    // const { allContext } = useAuth();
-    // const { user, logOut } = allContext
+    const { user, logOut } = useAuth();
     const activeStyle = {
         fontWeight: "bold",
         color: "red"
@@ -26,8 +26,14 @@ const Header = () => {
                             Link>
                         <Nav.Link as={NavLink} to="/addService" activeStyle={activeStyle}>AddService</Nav.
                             Link>
-                        <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
-                            Link>
+
+                        {
+                            user?.email ? <Button onClick={logOut} variant="light">Logout</Button> : <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
+                                Link>
+
+
+                        }
+
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact Us</Nav.
                             Link>
 
@@ -37,7 +43,7 @@ const Header = () => {
                                     Link>
                         } */}
                         <Navbar.Text>
-                            Signed in as: <a href="#login"></a>
+                            Signed in as: <a href="#login">{user.displayName}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
 

@@ -12,10 +12,7 @@ const Booking = () => {
     }, []);
     return (
         <div className="container m-5">
-            {/* <h2>Details of : {service.name}</h2>
-            <p>{service.description}</p>
-            <img src={service.img} alt="" />
-            <h2>this is booking: {serviceId}</h2> */}
+
             <Row xs={1} md={1} className="g-4">
 
                 <Col>

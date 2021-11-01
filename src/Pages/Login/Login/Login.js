@@ -1,15 +1,27 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebase';
+
 
 const Login = () => {
-    // const { allContext } = useAuth();
-    // const { signInUsingGoogle } = allContext;
-    const { signInUsingGoogle } = useFirebase()
+    const { signInUsingGoogle, setUser, user } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/shop';
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                setUser(result.user)
+                history.push(redirect_uri);
+            })
+    }
+
+
     return (
         <div>
             <h2>Please Login</h2>
-            <button onClick={signInUsingGoogle} className="btn btn-warning">Google Sign In</button>
+            <button onClick={handleGoogleLogin} className="btn btn-warning">Google Sign In</button>
         </div>
     );
 };

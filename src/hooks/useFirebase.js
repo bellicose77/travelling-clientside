@@ -1,27 +1,28 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from 'react';
-import initializeAuthentication from './../Pages/Login/Firebase/firebase.init';
+import { useEffect, useState } from "react";
+import initilizeAuthentication from "../Pages/Login/Firebase/firebase.init";
 
-initializeAuthentication();
-
+initilizeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
-
+    const [error, setError] = useState('');
     const auth = getAuth();
+    const provider = new GoogleAuthProvider();
 
     const signInUsingGoogle = () => {
-        setIsLoading(true);
-        const googleProvider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
-            })
-            .finally(() => setIsLoading(false));
+        return signInWithPopup(auth, provider)
+        // .then((result) => {
+        //     console.log(result)
+        //     setUser(result.user)
+
+        // }).catch((error) => {
+        //     setError(error)
+
+        // });
+
     }
 
-    // observe user state change
     useEffect(() => {
         const unsubscribed = onAuthStateChanged(auth, user => {
             if (user) {
@@ -30,24 +31,64 @@ const useFirebase = () => {
             else {
                 setUser({})
             }
-            setIsLoading(false);
+            ;
         });
         return () => unsubscribed;
     }, [])
-
     const logOut = () => {
-        setIsLoading(true);
+        // setIsLoading(true);
         signOut(auth)
-            .then(() => { })
-            .finally(() => setIsLoading(false));
+            .then(() => {
+                setUser({})
+            })
+        //         .finally(() => setIsLoading(false));
     }
-
     return {
         user,
-        isLoading,
+        error,
         signInUsingGoogle,
-        logOut
+        logOut,
+        setUser,
+        setError
     }
-}
 
+
+
+}
 export default useFirebase;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

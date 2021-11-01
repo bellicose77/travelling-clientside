@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Paris Hill Tour",
+        "img": "https://i.ibb.co/pbhpcSV/sri-gowda-pd-Ie9h-Aca-P4-unsplash.jpg",
+        "description": "Arrive at Airport & transfer to hotel The rest of day is at leisure so that you can relax after your long haul flight. Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture.",
+        "price": 166205,
+        "duration": "5 Days/ 6 night"
+    },
+    {
+        "id": 2,
+        "name": "Lake Garda, Italy",
+        "img": "https://i.ibb.co/JxCyWX9/hendrik-cornelissen-qrc-OR33-Er-A-unsplash.jpg",
+        "description": "North of Verona, Lake Garda is the most family- and water sports-oriented of Italy's lakes. It's also Italy's largest lake, reaching from the steep Alpine foothills to the northern edge of the Po Valley.",
+        "price": 162055,
+        "duration": "4 Days/ 5 night"
+    },
+    {
+        "id": 3,
+        "name": "Amalfi Costa, Italy",
+        "img": "https://i.ibb.co/GCYgJsg/tom-podmore-1zk-HXas1-GIo-unsplash.jpg",
+        "description": "One look at the Amalfi Coast and you may believe that you've found heaven on earth.The coast and the 13 seaside towns that call it home are all connected via the SS163 highway, considered one of the most scenic drives in the world. ",
+        "price": 182055,
+        "duration": "7 Days/ 8 night"
+    },
+    {
+        "id": 4,
+        "name": "Bora Bora",
+        "img": "https://i.ibb.co/TL1T3hf/aron-visuals-1kd-IG-258b-U-unsplash.jpg",
+        "description": "The small island of Bora Bora (just about 6 miles long and a little more than 2 miles wide) overflows with beauty. A dormant volcano rises up at its center and fans out into lush jungle before spilling into an aquamarine lagoon.",
+        "price": 182055,
+        "duration": "4 Days/ 5 night"
+    },
+    {
+        "id": 5,
+        "name": "Glacier National Park",
+        "img": "https://i.ibb.co/Yf8NShv/damien-chaudet-Sj-CHKi-GVWH4-unsplash.jpg",
+        "description": "Glacier National Park is known for its many hiking trails, ranging from the easy Trail of the Cedars to the moderate Avalance Lake to the strenuous Grinnell Glacier.",
+        "price": 145055,
+        "duration": "4 Days/ 5 night"
+    },
+    {
+        "id": 6,
+        "name": "Bali",
+        "img": "https://i.ibb.co/bBMTSML/road-trip-with-raj-s-ELc-HR-b-GVs-unsplash.jpg",
+        "description": "For relaxation, simply stay put at your resort of choice, which will most likely boast a beautiful beach, an exotic spa and an array of dining options.",
+        "price": 168055,
+        "duration": "4 Days/ 5 night"
+    }
+]

@@ -10,6 +10,7 @@ import Contact from './Pages/Home/Contact/Contact';
 import NotFound from './Pages/NotFound/NotFound';
 import Banner from './Pages/Home/Banner/Banner';
 import Footer from './Pages/Shared/Footer/Footer';
+import AddService from './Pages/AddService/AddService';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           <Route path="/home">
             {/* <Home></Home> */}
             <Banner></Banner>
+          </Route>
+          <Route path="/addService">
+            <AddService></AddService>
           </Route>
           <Route path="/services">
             <Services></Services>

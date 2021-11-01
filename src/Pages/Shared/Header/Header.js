@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import './Header.css';
 
 const Header = () => {
+    // const { allContext } = useAuth();
+    // const { user, logOut } = allContext
     const activeStyle = {
         fontWeight: "bold",
         color: "red"
@@ -22,6 +25,8 @@ const Header = () => {
                         <Nav.Link as={NavLink} to="/destination" activeStyle={activeStyle}>Destination</Nav.
                             Link>
                         <Nav.Link as={NavLink} to="/addService" activeStyle={activeStyle}>AddService</Nav.
+                            Link>
+                        <Nav.Link as={NavLink} to="/login" activeStyle={activeStyle}>Login</Nav.
                             Link>
                         <Nav.Link as={NavLink} to="/contact" activeStyle={activeStyle}>Contact Us</Nav.
                             Link>

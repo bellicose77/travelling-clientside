@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import Service from '../Service/Service';
 
 const Home = () => {
+    const [services, setService] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/services')
+            .then(res => res.json())
+            .then(data => setService(data));
+    }, []);
+    console.log(services);
+    console.log("data asce naki");
     return (
-        <div>
-            <h2>This is home page</h2>
-        </div>
+        <div className="container m-5">
+            <h2>Our Services</h2>
+            <Row xs={1} md={3} className="g-4">
+                {
+                    services.map(service => <Service key={service.id} service={service}></Service>)
+                }
+
+            </Row>
+
+        </div >
     );
 };
 

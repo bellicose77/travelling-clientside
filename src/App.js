@@ -11,6 +11,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import Banner from './Pages/Home/Banner/Banner';
 import Footer from './Pages/Shared/Footer/Footer';
 import AddService from './Pages/AddService/AddService';
+import Login from './Pages/Login/Login/Login';
+import Booking from './Pages/Booking/Booking/Booking';
 
 function App() {
   return (
@@ -19,18 +21,24 @@ function App() {
         <Header></Header>
         <Switch>
           <Route exact path="/">
-            {/* <Home></Home> */}
             <Banner></Banner>
+            <Home></Home>
           </Route>
           <Route path="/home">
-            {/* <Home></Home> */}
             <Banner></Banner>
+            <Home></Home>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
           <Route path="/addService">
             <AddService></AddService>
           </Route>
           <Route path="/services">
             <Services></Services>
+          </Route>
+          <Route path="/booking/:serviceId">
+            <Booking></Booking>
           </Route>
           <Route path="/destination">
             <Destination></Destination>

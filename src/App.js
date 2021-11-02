@@ -16,6 +16,7 @@ import Booking from './Pages/Booking/Booking/Booking';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Cart from './Pages/Cart/Cart';
+import UpdateService from './Pages/UpdateService/UpdateService';
 
 function App() {
   return (
@@ -38,12 +39,17 @@ function App() {
             <Route path="/addService">
               <AddService></AddService>
             </Route>
-            <Route path="/services">
+
+            <Route exact path="/services">
               <Services></Services>
             </Route>
             <PrivateRoute path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute>
+            <PrivateRoute exact path="/services/update/:id">
+              <UpdateService></UpdateService>
+            </PrivateRoute>
+
             <Route path="/destination">
               <Destination></Destination>
             </Route>
@@ -56,6 +62,7 @@ function App() {
             <Route path="/myoders">
               <Cart></Cart>
             </Route>
+
             <Route path="*">
               <NotFound></NotFound>
             </Route>

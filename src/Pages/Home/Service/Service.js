@@ -19,9 +19,15 @@ const Service = (props) => {
                                 <p className="text-danger">{duration}</p>
                             </div>
                         </Card.Text>
-                        <Link to={`/booking/${_id}`} >
-                            <button className="btn btn-warning">Book Now</button>
-                        </Link>
+                        <div className="button-dis">
+                            <Link to={`/booking/${_id}`} >
+                                <button className="btn btn-warning">Book Now</button>
+                            </Link>
+                            <Link to={`/services/update/${_id}`}>
+                                <button className="btn btn-danger m-3">Update</button>
+                            </Link>
+                        </div>
+
 
                     </Card.Body>
                 </Card>

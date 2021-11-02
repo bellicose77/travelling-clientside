@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './Cart.css';
 
 const Cart = () => {
     const { deleteSingleOrder, allContext } = useAuth();
@@ -30,7 +32,11 @@ const Cart = () => {
                                     <p className="text-danger">{order.price}</p>
                                 </Card.Text>
                             </Card.Body>
-                            <button onClick={() => deleteSingleOrder(order._id)} className="btn btn-warning">Delete</button>
+
+
+                            <button onClick={() => deleteSingleOrder(order._id)} className="btn btn-danger m-4">Delete</button>
+
+
                         </Card>
                     </Col>)
                 }

@@ -5,6 +5,7 @@ import initilizeAuthentication from "../Pages/Login/Firebase/firebase.init";
 initilizeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -23,18 +24,19 @@ const useFirebase = () => {
 
     }
 
+    // Get the currently signed-in user
     useEffect(() => {
-        const unsubscribed = onAuthStateChanged(auth, user => {
-            if (user) {
-                setUser(user);
+        const unsubscribe = onAuthStateChanged(auth, (signedInUser) => {
+            if (signedInUser) {
+                setUser(signedInUser);
+            } else {
+                setUser({});
             }
-            else {
-                setUser({})
-            }
-            ;
+            setLoading(false);
         });
-        return () => unsubscribed;
-    }, [])
+        return () => unsubscribe;
+    }, []);
+
     const logOut = () => {
         // setIsLoading(true);
         signOut(auth)
@@ -49,7 +51,8 @@ const useFirebase = () => {
         signInUsingGoogle,
         logOut,
         setUser,
-        setError
+        setError,
+        loading
     }
 
 

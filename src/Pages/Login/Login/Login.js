@@ -4,7 +4,8 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const { signInUsingGoogle, setUser, user } = useAuth();
+    const { allContext } = useAuth();
+    const { signInUsingGoogle, setUser, user } = allContext;
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/shop';

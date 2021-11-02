@@ -15,6 +15,7 @@ import Login from './Pages/Login/Login/Login';
 import Booking from './Pages/Booking/Booking/Booking';
 import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Cart from './Pages/Cart/Cart';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
             </Route>
             <Route path="/contact">
               <Contact></Contact>
+            </Route>
+            <Route path="/myoders">
+              <Cart></Cart>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

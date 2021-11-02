@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
 
 const Booking = () => {
+
+    const { addToCart, allContext } = useAuth();
+    const { user } = allContext;
+    const { uid } = user;
     const { serviceId } = useParams();
+    const history = useHistory();
     const [service, setService] = useState({});
     useEffect(() => {
         fetch(`http://localhost:5000/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
-    }, []);
+    }, [serviceId]);
     return (
         <div className="container m-5">
 
@@ -26,6 +32,15 @@ const Booking = () => {
                                 <p className="text-danger">{service
                                     .duration}</p>
                             </Card.Text>
+                            <button onClick={
+                                () => {
+                                    if (uid) {
+                                        addToCart(service);
+                                    } else {
+                                        history.push('/login');
+                                    }
+                                }
+                            } className="btn btn-warning">Add Cart</button>
                         </Card.Body>
                     </Card>
                 </Col>
